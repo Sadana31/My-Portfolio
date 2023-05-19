@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Portfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #4818b8;
+            align-self: center;
+        }
+
+
+        h1 {
+            font-size: 30px;
+            margin: 0;
+            align-self: center;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .portfolio-item {
+            display: flex;
+            margin-bottom: 20px;
+            opacity: 0;
+            transform: translateY(50px);
+            animation: fadeInUp 1s ease forwards;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .portfolio-item img {
+            max-width: 200px;
+            margin-right: 20px;
+            border-radius: 50%;
+            animation: rotate 2s infinite linear;
+            align-items: center;
+        }
+
+        @keyframes rotate {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .portfolio-item .description {
+            flex: 1;
+        }
+
+        .portfolio-item h2 {
+            font-size: 20px;
+            margin: 0;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        .portfolio-item p {
+            margin: 0;
+            color: #777;
+            align-self: center;
+        }
+
+	    .changing-text {
+            font-size: 30px;
+            text-align: center;
+            padding: 20px;
+	        animation: fade 2s infinite;
+            color: #fff;
+        }
+
+        .header-box {
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            font-family: Arial;
+            font-size: xx-large;
+        }
+
+        .header-box h1 {
+            font-size: 50px;
+            margin: 0;
+        }
+
+        .header-box p {
+            font-size: 18px;
+            margin: 10px 0 0;
+        }
+
+        .header-box a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+
+        @keyframes fade {
+            0% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes typing {
+        from { width: 0; }
+        to { width: 100%; }
+        }
+
+        #typing-animation {
+        overflow: hidden;
+        white-space: nowrap;
+        animation: typing 5s steps(80, end);
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <div class="header-box h1">
+        <h1> < Sadana's Portfolio /> </h1>
+        
+    </div>
+
+
+	<div class="changing-text">
+        	<span id="text"></span>
+    </div>
+
+	<script>
+        	var textElement = document.getElementById("text");
+	        var texts = ["Python","Java","C++","React"]; // Array of texts
+        	var currentIndex = 0;
+
+	        setInterval(changeText, 2000); // Change text every 2 seconds
+        
+
+	        function changeText() {
+        	    textElement.textContent = texts[currentIndex];
+            	    currentIndex = (currentIndex + 1) % texts.length; // Loop back to the start
+        	}
+	</script>
+
+    <div id="typing-animation">
+        <p>genius sadana is cool</p>
+    </div>
+
+
+
+    </div>
+</body>
+</html>
